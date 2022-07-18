@@ -1,16 +1,33 @@
-def roll_call_dwarves# code an argument here
-  # Your code here
+require 'pry'
+
+def roll_call_dwarves(array)
+  array.each.with_index(1) { |dwarf, index| puts "#{index}. #{dwarf}"  }
 end
 
-def summon_captain_planet# code an argument here
-  # Your code here
+def summon_captain_planet(array)
+  calls = array.map do |call|
+    call.capitalize + "!"
+  end
+  calls
 end
 
-def long_planeteer_calls# code an argument here
-  # Your code here
+def long_planeteer_calls(array)
+  array.each do |word|
+    if word.length > 3
+      return false
+    else 
+      return true
+    end
+  end
 end
 
-def find_the_cheese# code an argument here
-  # the array below is here to help
+def find_the_cheese(array)
   cheese_types = ["cheddar", "gouda", "camembert"]
+  array.find do |food|
+    cheese_types.include?(food)
+  end
 end
+
+
+# binding.pry
+# 0
